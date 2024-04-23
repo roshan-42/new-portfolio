@@ -1,5 +1,5 @@
 "use client";
-import React, { useState } from "react";
+import React, { useRef, useState } from "react";
 import Navbar from "../Navbar/Navbar";
 import profile from "../../../assets/profile.jpg";
 import { FaGithub } from "react-icons/fa";
@@ -31,7 +31,9 @@ import Skills from "./Skills";
 import Works from "./Works";
 import About from "./About";
 import Contact from "./Contact";
+import { motion } from "framer-motion";
 const Landingpage = () => {
+  const scrollRef = useRef(null);
   const [show, setShow] = useState(0);
   return (
     <div className=" h-[80rem] lg:h-[60rem]  w-screen flex justify-center ">
@@ -39,7 +41,11 @@ const Landingpage = () => {
         {/* <Navbar /> */}
         <div className=" flex flex-col lg:grid lg:grid-cols-7 gap-4 mt-14 sm:mt-28 ">
           {/* =================First Grid======================== */}
-          <div className="relative col-span-2 bg-white flex flex-col items-center rounded-xl gap-3 p-5">
+          <motion.div
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            className="relative col-span-2 bg-white flex flex-col items-center rounded-xl gap-3 p-5"
+          >
             <Image
               className="z-10 absolute border-red-200 border-2 -top-28 h-48 w-48 rounded-lg"
               src={profile}
@@ -105,55 +111,83 @@ const Landingpage = () => {
               <FaDownload />
               Download CV
             </button>
-          </div>
+          </motion.div>
           {/* =================== Second Grid ========================== */}
-          <div className="col-span-5   rounded-xl ">
+          <motion.div
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            className="col-span-5   rounded-xl "
+          >
             <div className="flex  gap-5  justify-end px-3 text-gray-800">
               <div className=" flex gap-5  bg-white p-4 px-14 text-lg rounded-lg overflow-scroll sm:overflow-hidden">
-                <button
+                <motion.button
+                  whileHover={{ scale: 1.2 }}
+                  onHoverStart={(e) => {}}
+                  onHoverEnd={(e) => {}}
+                  whileTap={{ scale: 0.8 }}
                   onClick={() => setShow(0)}
                   className={`${
                     show == 0 ? "bg-red-400 text-white" : "bg-gray-200"
                   }  flex flex-col items-center bg-gray-200 p-2 rounded-md w-24 hover:bg-red-400 hover:text-white transition-all`}
                 >
                   <FaUser /> About
-                </button>
-                <button
+                </motion.button>
+                <motion.button
+                  whileHover={{ scale: 1.2 }}
+                  onHoverStart={(e) => {}}
+                  onHoverEnd={(e) => {}}
+                  whileTap={{ scale: 0.8 }}
                   onClick={() => setShow(1)}
                   className={`${
                     show == 1 ? "bg-red-400 text-white" : "bg-gray-200"
                   }  flex flex-col items-center bg-gray-200 p-2 rounded-md w-24 hover:bg-red-400 hover:text-white transition-all`}
                 >
                   <IoDocumentTextOutline /> Resume
-                </button>
-                <button
+                </motion.button>
+                <motion.button
+                  whileHover={{ scale: 1.2 }}
+                  onHoverStart={(e) => {}}
+                  onHoverEnd={(e) => {}}
+                  whileTap={{ scale: 0.8 }}
                   onClick={() => setShow(2)}
                   className={`${
                     show == 2 ? "bg-red-400 text-white" : "bg-gray-200"
                   }  flex flex-col items-center bg-gray-200 p-2 rounded-md w-24 hover:bg-red-400 hover:text-white transition-all`}
                 >
                   <MdOutlineWork /> Works
-                </button>
-                <button
+                </motion.button>
+                <motion.button
+                  whileHover={{ scale: 1.2 }}
+                  onHoverStart={(e) => {}}
+                  onHoverEnd={(e) => {}}
+                  whileTap={{ scale: 0.8 }}
                   onClick={() => setShow(3)}
                   className={`${
                     show == 3 ? "bg-red-400 text-white" : "bg-gray-200"
                   }  flex flex-col items-center bg-gray-200 p-2 rounded-md w-24 hover:bg-red-400 hover:text-white transition-all`}
                 >
                   <GiAutoRepair /> Skills
-                </button>
-                <button
+                </motion.button>
+                <motion.button
+                  whileHover={{ scale: 1.2 }}
+                  onHoverStart={(e) => {}}
+                  onHoverEnd={(e) => {}}
+                  whileTap={{ scale: 0.8 }}
                   onClick={() => setShow(4)}
                   className={`${
                     show == 4 ? "bg-red-400 text-white" : "bg-gray-200"
                   }  flex flex-col items-center bg-gray-200 p-2 rounded-md w-24 hover:bg-red-400 hover:text-white transition-all`}
                 >
                   <RiContactsBook2Line /> Contact
-                </button>
+                </motion.button>
               </div>
             </div>
             {/* ====================Second part=========================== */}
-            <div className="bg-white mt-5 p-5 rounded-lg h-fit sm:h-[50vh] overflow-y-scroll">
+            <motion.div
+              initial={{ opacity: 0 }}
+              whileInView={{ opacity: 1 }}
+              className="bg-white mt-5 p-5 rounded-lg h-fit sm:h-[50vh] overflow-y-scroll"
+            >
               {/* =================About Me================== */}
               <div className={` ${show == 0 ? "block" : "hidden"} `}>
                 <About />
@@ -174,8 +208,8 @@ const Landingpage = () => {
               <div className={` ${show == 4 ? "block" : "hidden"} `}>
                 <Contact />
               </div>
-            </div>
-          </div>
+            </motion.div>
+          </motion.div>
         </div>
       </div>
     </div>
