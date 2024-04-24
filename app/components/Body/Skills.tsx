@@ -1,8 +1,8 @@
 import React from "react";
 import { FaBootstrap, FaHtml5, FaReact } from "react-icons/fa";
 import { IoLogoJavascript } from "react-icons/io5";
-import figma from "@/assets/figma.png";
-import js from "@/assets/JS.png";
+import figma from "@/public/assets/figma.png";
+import js from "@/public/assets/JS.png";
 import {
   SiAdobeaftereffects,
   SiAdobephotoshop,

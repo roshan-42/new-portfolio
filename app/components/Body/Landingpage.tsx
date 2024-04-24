@@ -1,7 +1,7 @@
 "use client";
 import React, { useRef, useState } from "react";
 import Navbar from "../Navbar/Navbar";
-import profile from "../../../assets/profile.jpg";
+import profile from "@/public/assets/profile.jpg";
 import { FaGithub } from "react-icons/fa";
 import { FaLinkedin } from "react-icons/fa6";
 import { AiFillInstagram } from "react-icons/ai";
@@ -32,6 +32,7 @@ import Works from "./Works";
 import About from "./About";
 import Contact from "./Contact";
 import { motion } from "framer-motion";
+
 const Landingpage = () => {
   const scrollRef = useRef(null);
   const [show, setShow] = useState(0);
@@ -107,10 +108,12 @@ const Landingpage = () => {
                 </div>
               </div>
             </div>
-            <button className="bg-red-400 p-2 rounded-lg flex gap-2 items-center text-white">
-              <FaDownload />
-              Download CV
-            </button>
+            <a href="./assets/CV.pdf" download="MyExampleDoc" target="_blank">
+              <button className="bg-red-400 p-2 rounded-lg flex gap-2 items-center text-white">
+                <FaDownload />
+                Download CV
+              </button>
+            </a>
           </motion.div>
           {/* =================== Second Grid ========================== */}
           <motion.div
