@@ -37,14 +37,16 @@ const Landingpage = () => {
   const scrollRef = useRef(null);
   const [show, setShow] = useState(0);
   return (
-    <div className=" h-[80rem] lg:h-[60rem]  w-screen flex justify-center ">
+    <div className=" h-[80rem] lg:h-[60rem]  w-screen flex justify-center overflow-hidden ">
       <div className="w-[85%] ">
         {/* <Navbar /> */}
         <div className=" flex flex-col lg:grid lg:grid-cols-7 gap-4 mt-14 sm:mt-28 ">
           {/* =================First Grid======================== */}
           <motion.div
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
+            initial={{ opacity: 0, translateX: -50 }}
+            whileInView={{ opacity: 1, translateX: 0 }}
+            viewport={{ once: false }}
+            transition={{ duration: 1 }}
             className="relative col-span-2 bg-white flex flex-col items-center rounded-xl gap-3 p-5"
           >
             <Image
@@ -56,13 +58,28 @@ const Landingpage = () => {
             <p className="bg-gray-200 p-1 px-2 rounded-lg">React Developer</p>
             <div className="flex gap-2">
               <Link href={"https://github.com/roshan-42"} target="blank">
-                <FaGithub />
+                <motion.button
+                  whileHover={{ scale: 1.2 }}
+                  onHoverStart={(e) => {}}
+                  onHoverEnd={(e) => {}}
+                  whileTap={{ scale: 0.8 }}
+                >
+                  <FaGithub />
+                </motion.button>
               </Link>
               <Link
                 href={"https://www.linkedin.com/in/roshanacharya42/"}
                 target="blank"
               >
-                <FaLinkedin />
+                {" "}
+                <motion.button
+                  whileHover={{ scale: 1.2 }}
+                  onHoverStart={(e) => {}}
+                  onHoverEnd={(e) => {}}
+                  whileTap={{ scale: 0.8 }}
+                >
+                  <FaLinkedin color="007AB5" />
+                </motion.button>
               </Link>
               <Link
                 href={
@@ -70,7 +87,14 @@ const Landingpage = () => {
                 }
                 target="blank"
               >
-                <AiFillInstagram />
+                <motion.button
+                  whileHover={{ scale: 1.2 }}
+                  onHoverStart={(e) => {}}
+                  onHoverEnd={(e) => {}}
+                  whileTap={{ scale: 0.8 }}
+                >
+                  <AiFillInstagram color="#EE2A7B" size={20} />
+                </motion.button>
               </Link>
             </div>
             {/* =====================Second part=============== */}
@@ -109,16 +133,24 @@ const Landingpage = () => {
               </div>
             </div>
             <a href="./assets/CV.pdf" download="MyExampleDoc" target="_blank">
-              <button className="bg-red-400 p-2 rounded-lg flex gap-2 items-center text-white">
+              <motion.button
+                whileHover={{ scale: 1.2 }}
+                onHoverStart={(e) => {}}
+                onHoverEnd={(e) => {}}
+                whileTap={{ scale: 0.8 }}
+                className="bg-red-400 p-2 hover:bg-white hover:border-2 hover:border-red-400 hover:text-black rounded-lg flex gap-2 items-center text-white"
+              >
                 <FaDownload />
                 Download CV
-              </button>
+              </motion.button>
             </a>
           </motion.div>
           {/* =================== Second Grid ========================== */}
           <motion.div
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
+            initial={{ opacity: 0, translateX: 50 }}
+            whileInView={{ opacity: 1, translateX: 0 }}
+            viewport={{ once: false }}
+            transition={{ duration: 1 }}
             className="col-span-5   rounded-xl "
           >
             <div className="flex  gap-5  justify-end px-3 text-gray-800">
