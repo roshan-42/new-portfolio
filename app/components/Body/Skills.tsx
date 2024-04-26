@@ -17,7 +17,7 @@ const Skills = () => {
     <div className="flex flex-col justify-between p-5 ">
       <div className="flex items-center gap-3">
         <p className="font-bold text-3xl">Skills</p>
-        <div className="bg-red-500 h-[2px] w-24 rounded-full"></div>
+        <div className="bg-red-500 h-[2px] mt-3  w-24 rounded-full"></div>
       </div>
       <div className=" mt-10   flex flex-wrap gap-12   text-3xl sm:text-4xl">
         <div className="flex flex-col items-center ">

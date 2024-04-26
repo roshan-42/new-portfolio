@@ -5,7 +5,7 @@ const About = () => {
     <div>
       <div className={`  flex items-center gap-4`}>
         <h2 className="font-bold text-3xl">About</h2>
-        <div className="bg-red-500 h-[2px] w-24 rounded-full"></div>
+        <div className="bg-red-500 mt-3  h-[2px] w-24 rounded-full"></div>
       </div>
       <p>
         I'm a React developer, graduated from Amrit Science Campus with a degree
