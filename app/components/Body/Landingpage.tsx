@@ -37,7 +37,7 @@ const Landingpage = () => {
   const scrollRef = useRef(null);
   const [show, setShow] = useState(0);
   return (
-    <div className=" h-[80rem] lg:h-[60rem]  w-screen flex justify-center overflow-hidden ">
+    <div className="mt-8 sm:mt-20 h-[80rem] lg:h-[60rem]  w-screen flex justify-center overflow-hidden ">
       <div className="w-[85%] ">
         {/* <Navbar /> */}
         <div className=" flex flex-col lg:grid lg:grid-cols-7 gap-4 mt-14 sm:mt-28 ">
@@ -47,14 +47,14 @@ const Landingpage = () => {
             whileInView={{ opacity: 1, translateX: 0 }}
             viewport={{ once: false }}
             transition={{ duration: 1 }}
-            className="relative col-span-2 bg-white flex flex-col items-center rounded-xl gap-3 p-5"
+            className=" z-50 relative col-span-2 bg-white flex flex-col items-center rounded-xl gap-3 p-5"
           >
             <Image
-              className="z-10 absolute border-red-200 border-2 -top-28 h-48 w-48 rounded-lg"
+              className=" sm:absolute border-red-200 border-2 -top-28 h-48 w-48 rounded-lg"
               src={profile}
               alt=""
             />
-            <p className="text-2xl font-semibold mt-28">Roshan Acharya</p>
+            <p className="text-2xl font-semibold  sm:mt-28">Roshan Acharya</p>
             <p className="bg-gray-200 p-1 px-2 rounded-lg">React Developer</p>
             <div className="flex gap-2">
               <Link href={"https://github.com/roshan-42"} target="blank">
