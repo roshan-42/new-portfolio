@@ -14,12 +14,12 @@ import Image from "next/image";
 
 const Skills = () => {
   return (
-    <div className="flex flex-col justify-between p-5 ">
+    <div className="flex flex-col h-[25rem] justify-between p-5 overflow-scroll ">
       <div className="flex items-center gap-3">
         <p className="font-bold text-3xl">Skills</p>
         <div className="bg-red-500 h-[2px] mt-3  w-24 rounded-full"></div>
       </div>
-      <div className=" mt-10   flex flex-wrap gap-12   text-3xl sm:text-4xl">
+      <div className=" mt-10   flex flex-wrap gap-12   text-3xl sm:text-4xl ">
         <div className="flex flex-col items-center ">
           <FaReact color="#00729A" />
           <p className="text-sm sm:text-xl">React</p>
