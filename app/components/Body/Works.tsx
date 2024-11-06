@@ -1,10 +1,29 @@
 import Link from "next/link";
 import React from "react";
+import Image, { StaticImageData } from "next/image";
 import work1 from "@/public/assets/work1.png";
 import work2 from "@/public/assets/work2.png";
 import work3 from "@/public/assets/work3.png";
+import work4 from "@/public/assets/upschool.png";
 
-import Image from "next/image";
+type WorkCardProps = {
+  link: string;
+  image: StaticImageData;
+  name: string;
+};
+
+const WorkCard: React.FC<WorkCardProps> = ({ link, image, name }) => {
+  return (
+    <div className="hover:bg-red-500 hover:text-white text-black w-fit h-fit rounded-md shadow-lg hover:scale-110 transition-all">
+      <Link target="black" href={link}>
+        <div className="w-64 sm:w-96 ">
+          <Image src={image} alt="" />
+          <p className=" p-2">{name} </p>
+        </div>
+      </Link>
+    </div>
+  );
+};
 
 const Works = () => {
   return (
@@ -14,30 +33,26 @@ const Works = () => {
         <div className="bg-red-500 mt-3 h-[2px] w-24 rounded-full"></div>
       </div>
       <div className="flex flex-wrap gap-5 items-center justify-center lg:justify-start py-4">
-        <div className="hover:bg-green-500 hover:text-white text-black shadow-lg hover:scale-110 transition-all w-fit h-fit rounded-md ">
-          <Link target="blank" href="https://www.laliguras.de/">
-            <div className="w-64 sm:w-96 ">
-              <Image src={work1} alt="" />
-              <p className="p-2 ">Laliguras GmbH </p>
-            </div>
-          </Link>
-        </div>
-        <div className="hover:bg-orange-500 hover:text-white text-black w-fit h-fit rounded-md shadow-lg hover:scale-110 transition-all">
-          <Link target="black" href="https://ecommerce-fawn-five.vercel.app/">
-            <div className="w-64 sm:w-96 ">
-              <Image src={work2} alt="" />
-              <p className=" p-2">Ecommerce Website </p>
-            </div>
-          </Link>
-        </div>
-        <div className="hover:bg-red-500 hover:text-white text-black w-fit h-fit rounded-md shadow-lg hover:scale-110 transition-all">
-          <Link target="black" href="https://mario-css.vercel.app/">
-            <div className="w-64 sm:w-96 ">
-              <Image src={work3} alt="" />
-              <p className=" p-2">Static Website </p>
-            </div>
-          </Link>
-        </div>
+        <WorkCard
+          link="https://www.laliguras.de/"
+          image={work1}
+          name="Laliguras GmbH"
+        />
+        <WorkCard
+          link="https://library.upschool.co/"
+          image={work4}
+          name="UpSchool"
+        />
+        <WorkCard
+          link="https://ecommerce-fawn-five.vercel.app/"
+          image={work2}
+          name="Ecommerce Website"
+        />
+        <WorkCard
+          link="https://mario-css.vercel.app/"
+          image={work3}
+          name="Static Website"
+        />
       </div>
     </div>
   );
