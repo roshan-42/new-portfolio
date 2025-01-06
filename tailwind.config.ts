@@ -1,13 +1,13 @@
-import type { Config } from "tailwindcss"
+import type { Config } from "tailwindcss";
 
 const config = {
   darkMode: ["class"],
   content: [
-    './pages/**/*.{ts,tsx}',
-    './components/**/*.{ts,tsx}',
-    './app/**/*.{ts,tsx}',
-    './src/**/*.{ts,tsx}',
-	],
+    "./pages/**/*.{ts,tsx}",
+    "./components/**/*.{ts,tsx}",
+    "./app/**/*.{ts,tsx}",
+    "./src/**/*.{ts,tsx}",
+  ],
   prefix: "",
   theme: {
     container: {
@@ -53,6 +53,22 @@ const config = {
           foreground: "hsl(var(--card-foreground))",
         },
       },
+      fontFamily: {
+        arvo: ["Arvo", "serif"],
+        montserrat: ["Montserrat", "sans-serif"],
+        inter: ["Inter", "sans-serif"],
+        lexend: ["Lexend", "sans-serif"],
+        roboto: ["Roboto", "sans-serif"],
+        check: ['"Pixelify Sans"', "sans-serif"],
+        anton: ["'Anton'", "sans-serif"],
+        didact: ["'Didact Gothic'", "sans-serif"],
+        caveat: ["Caveat", "cursive"],
+        poppins: ["Poppins", "sans-serif"],
+        nunito: ["Nunito Sans", "sans-serif"],
+        annieUseYourTelescope: ['"Annie Use Your Telescope"', "cursive"],
+        kumbh: ["Kumbh Sans", "sans-serif"],
+        greatvibes: ["Great Vibes", "sans-serif"],
+      },
       borderRadius: {
         lg: "var(--radius)",
         md: "calc(var(--radius) - 2px)",
@@ -75,6 +91,6 @@ const config = {
     },
   },
   plugins: [require("tailwindcss-animate")],
-} satisfies Config
+} satisfies Config;
 
-export default config
+export default config;
