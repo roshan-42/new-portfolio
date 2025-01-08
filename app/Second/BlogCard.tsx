@@ -1,5 +1,6 @@
 import React from "react";
 import Image from "next/image";
+import { prisma } from "@/utils/prisma";
 
 interface CardProps {
   imageUrl: string;
@@ -15,7 +16,7 @@ const Card: React.FC<CardProps> = ({
   //   onView,
 }) => {
   return (
-    <div className="max-w-sm rounded-lg overflow-hidden shadow-lg bg-white">
+    <div className="w-2/6 rounded-lg overflow-hidden shadow-lg bg-white">
       <div className="relative w-full h-48">
         <Image
           src={imageUrl}

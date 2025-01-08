@@ -2,9 +2,11 @@
 import React, { useState } from "react";
 import BlogCard from "../Second/BlogCard";
 import CreateBlog from "../Second/CreateBlog";
+import Link from "next/link";
 
-const Blogs = () => {
+const Blogs = async () => {
   const [showBlogs, setShowBlogs] = useState(false);
+
   const BlogContent = [
     {
       image:
@@ -31,15 +33,18 @@ const Blogs = () => {
   return (
     <div className="mx-20">
       <div className="text-2xl font-bold mt-5">Blog Section </div>
-      <button className="bg-orange-500 text-white p-5 m-2 hover:bg-orange-600 rounded-md transition-all ease-in-out">
-        Create a Blog.
-      </button>
+      <Link href="/blogview">
+        <button className="bg-orange-500 text-white p-5 m-2 hover:bg-orange-600 rounded-md transition-all ease-in-out">
+          View blogs
+        </button>
+      </Link>
+
       {showBlogs && (
-        <div className="flex gap-2">
+        <div className="flex gap-2 w-full">
           {BlogContent.map((item, index) => (
             <BlogCard
               key={index}
-              imageUrl={item.image}
+              imageUrl="https://cdn.pixabay.com/photo/2024/11/21/22/06/deer-9214838_1280.jpg"
               title={item.title}
               description={item.description}
             />

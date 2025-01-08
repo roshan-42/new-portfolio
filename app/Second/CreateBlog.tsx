@@ -7,10 +7,10 @@ const CreateBlog = () => {
   const [title, setTitle] = useState("");
   const [description, setDescription] = useState("");
 
-  //   const handleSubmit = () => {
-  //     console.log("Blog Created:", { title, description });
-  //     alert("Blog Created Successfully!");
-  //   };
+  const handleSubmit = () => {
+    console.log("Blog Created:", { title, description });
+    alert("Blog Created Successfully!");
+  };
 
   return (
     <Form action={actions.createBlog} className="p-4 max-w-md mx-auto border">
@@ -31,8 +31,8 @@ const CreateBlog = () => {
         className="border p-2 w-full mb-4"></textarea>
       <button
         type="submit"
-        // onClick={handleSubmit}
-        className="bg-blue-500 text-white p-2 rounded">
+        onClick={handleSubmit}
+        className="bg-red-500 text-white p-2 rounded">
         Create Blog
       </button>
     </Form>
