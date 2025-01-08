@@ -38,6 +38,7 @@ const Blogs = () => {
         <div className="flex gap-2">
           {BlogContent.map((item, index) => (
             <BlogCard
+              key={index}
               imageUrl={item.image}
               title={item.title}
               description={item.description}
